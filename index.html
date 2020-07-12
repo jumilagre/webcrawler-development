@@ -1,49 +1,82 @@
 <html>
-    <header> 
-        <title>Cute.com</title>
-        <style>
-
-            html, body, div {
-                margin: 0;
-                padding: 0;
-            }
-            h1 {
-                color: palevioletred;
-                font-size: 60px;
-                border: 3px blueviolet dotted;
-            }
-            h2{
-                color:plum;
-                font-size: 35px;
-            }
-            p {
-                color: gray;
-                width: 600px;
-                height:200px;
-                    margin: 0 auto;
-
-            }
-            #central {
-                width: 100%
-            }
-            .center {
-                text-align: center;
-            }
-        </style>
-    </header>
+    <head>
+        <title>Cadastro</title>
+    </head>
     <body>
-        <div id=esquerda>
-        </div>
-        <div id=central>
-            <h1 class=center>Gatinhos bonitinhos</h1>
-            <h2 class=center>É tão fofinho!!!!</h2>
-            <P class=center>Gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos.</P>
-            <p class=center>Gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos, gatinhos.</p>
+        <form action="index.html">
+            <div>
+                <label>
+                    Nome de usuário: <input id="username" type="text">
+                </label>
+            </div>
+            <br />
+            <div>
+                <label>
+                    E-mail: <input id="email" type="email">
+                </label>
+            </div>
+            <br />
+            <div>
+                <label>
+                    Telefone: <input id="telephone" type="text">
+                </label>
+            </div>
+            <br />
+            <div>
+                <label>
+                    Sexo: 
+                </label> 
+            </div>
+            <div>
+                <label>
+                    Mulher: <input type="radio" name="d1" value="Mulher">
+                </label> 
+            </div>
+            <div>
+                <label>
+                    Homem: <input type="radio" name="d1" value="Homem">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Outro: <input type="radio" name="d1" value="Outro">
+                </label>
+            </div>
+            <br />
+            <div>
+                <label>
+                    Senha: <input id="password" type="password">
+                </label>
+            </div>
+            <br />
+            <div>
+                <label>
+                    Confirmação da senha: <input id="confirmPassword" type="password">
+                </label>
+            </div>
+            <br />
+            <button id="marvin">Cadastrar</button>
+        </form>
 
-        </div>
-        <div id=direita>
-            <img src="Imagem/gatinhos.png" />
-        </div>
-    </body>
+    </body>        <script>
+        const marvin = document.getElementById("marvin");
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const telephone = document.getElementById("telephone");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirmPassword");
+        marvin.addEventListener("click", handleClick);
 
-</html>   
+        function handleClick(event) {
+            event.preventDefault();
+
+            if (password.value !== confirmPassword.value) {
+                alert ("Senhas Diferentes");
+            }
+            else {
+                alert ("Cadastro efetuado")
+            }
+        }
+
+    </script>
+</html>
